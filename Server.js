@@ -10,4 +10,8 @@ app.use(express.json())
 app.use("/api/users",userRouter)
 app.use("/api/posts",postRouter)
 app.use("/api/comments",commentRouter)
+app.use((req,res)=>{
+   res.send("API IS RUNNING ...") 
+})
+const port = process.env.port || 7666
 app.listen(process.env.port,console.log(`server is running on ${process.env.port}`))
